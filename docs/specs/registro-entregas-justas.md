@@ -84,7 +84,9 @@ Permitir que un voluntario registre una entrega en pocos pasos, comprobando la e
 
 ## 7. Supuestos y riesgos
 
-- Para el prototipo, los datos se guardan en el navegador mediante almacenamiento local; no se comparten entre dispositivos.
+- Los datos del feature se almacenarán en la base de datos del proyecto, utilizando la infraestructura existente de Neon.
+- Las operaciones de entrega y descuento de inventario deberán ejecutarse de forma consistente para evitar descuentos parciales o existencias negativas.
+- La disponibilidad de los datos dependerá de la conexión con el backend.
 - El periodo inicial es 30 días y debe poder cambiarse.
 - El voluntario escribe su nombre para dejar trazabilidad; esto no equivale a autenticación.
 - La fecha del dispositivo debe ser correcta.
