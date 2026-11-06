@@ -80,6 +80,11 @@ export function AuthForm({ mode }: { mode: 'sign-in' | 'sign-up' }) {
               className={fieldClass}
             />
           </Field>
+          {!isSignUp ? (
+            <Link href="/recuperar" className="inline-flex min-h-12 w-fit items-center py-2 text-base font-bold text-primary underline underline-offset-4">
+              ¿Olvidaste tu contraseña?
+            </Link>
+          ) : null}
           <ResultBanner result={error ? { ok: false, error } : null} />
           <Button type="submit" disabled={pending} className={bigButton}>
             {pending ? 'Un momento…' : isSignUp ? 'Crear cuenta' : 'Entrar'}
@@ -88,7 +93,7 @@ export function AuthForm({ mode }: { mode: 'sign-in' | 'sign-up' }) {
 
         <p className="text-base">
           {isSignUp ? '¿Ya tiene cuenta? ' : '¿Primera vez? '}
-          <Link href={isSignUp ? '/sign-in' : '/sign-up'} className="font-bold text-primary underline underline-offset-4">
+          <Link href={isSignUp ? '/sign-in' : '/sign-up'} className="inline-flex min-h-12 items-center py-2 font-bold text-primary underline underline-offset-4">
             {isSignUp ? 'Entrar' : 'Crear una cuenta'}
           </Link>
         </p>
