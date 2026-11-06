@@ -44,7 +44,7 @@ export default async function LotPage({ params }: { params: Promise<{ id: string
                   <span className="text-lg font-bold">
                     {movementLabel[m.type]}
                     {m.deliveryId ? (
-                      <Link href={`/entregas/${m.deliveryId}`} className="ml-2 text-base font-normal text-primary underline underline-offset-4">
+                      <Link href={`/entregas/${m.deliveryId}`} className="ml-2 inline-flex min-h-12 items-center text-base font-normal text-primary underline underline-offset-4">
                         ver entrega
                       </Link>
                     ) : null}

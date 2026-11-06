@@ -92,7 +92,7 @@ export function DonationForm({ today }: { today: string }) {
                 <Button
                   type="button"
                   variant="outline"
-                  className="h-11 gap-2 text-base"
+                  className="h-12 gap-2 text-base"
                   onClick={() => setItems((l) => l.filter((i) => i.key !== item.key))}
                 >
                   <Trash2 className="size-5" aria-hidden="true" />

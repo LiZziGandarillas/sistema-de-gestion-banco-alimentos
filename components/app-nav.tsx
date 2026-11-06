@@ -32,10 +32,10 @@ export function AppNav({ name, isCoordinator }: { name: string; isCoordinator: b
   return (
     <header className="border-b border-border bg-card">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 md:px-6">
-        <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2 text-xl font-bold">
-            <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground" aria-hidden="true">
-              <HandHeart className="size-5" />
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Link href="/" className="flex min-h-12 items-center gap-2 text-xl font-bold">
+            <span className="flex size-12 items-center justify-center rounded-lg bg-primary text-primary-foreground" aria-hidden="true">
+              <HandHeart className="size-6" />
             </span>
             Banco de Alimentos
           </Link>
@@ -45,7 +45,7 @@ export function AppNav({ name, isCoordinator }: { name: string; isCoordinator: b
               type="button"
               onClick={signOut}
               disabled={leaving}
-              className="inline-flex h-11 items-center gap-2 rounded-lg border-2 border-border px-3 text-base font-bold hover:bg-muted disabled:opacity-60"
+              className="inline-flex h-12 items-center gap-2 rounded-lg border-2 border-border px-3 text-base font-bold hover:bg-muted disabled:opacity-60"
             >
               <LogOut className="size-5" aria-hidden="true" />
               Salir
@@ -62,7 +62,7 @@ export function AppNav({ name, isCoordinator }: { name: string; isCoordinator: b
                     href={href}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
-                      'flex h-11 items-center gap-2 whitespace-nowrap rounded-lg px-3 text-base font-bold',
+                      'flex h-12 items-center gap-2 whitespace-nowrap rounded-lg px-3 text-base font-bold',
                       active ? 'bg-primary text-primary-foreground' : 'text-foreground hover:bg-muted',
                     )}
                   >

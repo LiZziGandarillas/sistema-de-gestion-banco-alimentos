@@ -33,7 +33,7 @@ export default async function InventoryPage({ searchParams }: { searchParams: Pr
             href={`/inventario?ver=${f.key}`}
             aria-current={ver === f.key ? 'page' : undefined}
             className={cn(
-              'flex h-11 items-center rounded-lg border-2 px-4 text-base font-bold',
+              'flex h-12 items-center rounded-lg border-2 px-4 text-base font-bold',
               ver === f.key ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-card hover:border-primary',
             )}
           >
@@ -80,17 +80,20 @@ async function OpenList({ onlyAttention, category }: { onlyAttention: boolean; c
                   <span className="text-base text-muted-foreground">{`${lot.code} · ${lot.category}`}</span>
                 </Link>
               </td>
-              <td className="text-lg md:px-4 md:py-3">
+              <td className="flex items-baseline gap-2 text-lg md:table-cell md:px-4 md:py-3">
+                <span className="text-base font-bold md:hidden">Queda:</span>
                 <strong>{formatQty(lot.quantityAvailable)}</strong>
                 {` ${lot.unit}`}
               </td>
-              <td className="text-base md:px-4 md:py-3">
+              <td className="flex items-baseline gap-2 text-base md:table-cell md:px-4 md:py-3">
+                <span className="text-base font-bold md:hidden">Caducidad:</span>
                 <span className="flex flex-col">
                   <span>{lot.expiresAt ? formatDate(lot.expiresAt) : 'Sin fecha'}</span>
                   <span className="text-muted-foreground">{expiryText(lot.alert, lot.expiresAt)}</span>
                 </span>
               </td>
-              <td className="md:px-4 md:py-3">
+              <td className="flex items-baseline gap-2 md:table-cell md:px-4 md:py-3">
+                <span className="text-base font-bold md:hidden">Estado:</span>
                 <AlertLabel alert={lot.alert} />
               </td>
             </tr>
@@ -121,7 +124,7 @@ async function ClosedList() {
               <span className="text-lg font-bold">{lot.name}</span>
               <span className="text-base text-muted-foreground">{`${lot.code} · recibido ${formatDate(lot.receivedAt)}`}</span>
             </span>
-            <span className="rounded-md bg-muted px-2.5 py-1 text-sm font-bold">{statusText[lot.status]}</span>
+            <span className="rounded-md bg-muted px-2.5 py-1 text-base font-bold">{statusText[lot.status]}</span>
           </Link>
         </li>
       ))}

@@ -5,7 +5,7 @@ import { buttonVariants } from '@/components/ui/button'
 import type { LotAlert } from '@/lib/domain'
 
 export const fieldClass =
-  'h-12 w-full rounded-lg border-2 border-input bg-card px-3 text-lg text-foreground outline-none focus-visible:border-ring focus-visible:ring-4 focus-visible:ring-ring/25 disabled:opacity-60'
+  'h-12 w-full rounded-lg border-2 border-input bg-card px-3 text-lg text-foreground focus-visible:border-ring focus-visible:ring-4 focus-visible:ring-ring/25 disabled:opacity-60'
 
 export const bigButton = 'h-12 px-5 text-lg font-bold rounded-lg gap-2 [&_svg:not([class*=size-])]:size-5'
 
@@ -27,7 +27,7 @@ export function Field({
       </label>
       {children}
       {help ? (
-        <p id={`${htmlFor}-help`} className="text-sm text-muted-foreground">
+        <p id={`${htmlFor}-help`} className="text-base text-muted-foreground">
           {help}
         </p>
       ) : null}
@@ -49,7 +49,7 @@ export function PageHeader({
   return (
     <header className="flex flex-col gap-3 pb-6">
       {back ? (
-        <Link href={back.href} className="w-fit text-base font-bold text-primary underline underline-offset-4">
+        <Link href={back.href} className="inline-flex min-h-12 w-fit items-center py-2 text-base font-bold text-primary underline underline-offset-4">
           {'← '}
           {back.label}
         </Link>
@@ -95,7 +95,7 @@ const alertStyles: Record<LotAlert['kind'], { className: string; Icon: typeof Cl
 export function AlertLabel({ alert }: { alert: LotAlert }) {
   const { className, Icon } = alertStyles[alert.kind]
   return (
-    <span className={cn('inline-flex w-fit items-center gap-1.5 rounded-md px-2.5 py-1 text-sm font-bold', className)}>
+    <span className={cn('inline-flex w-fit items-center gap-1.5 rounded-md px-2.5 py-1 text-base font-bold', className)}>
       <Icon className="size-4" aria-hidden="true" />
       {alert.label}
     </span>
@@ -118,7 +118,7 @@ export function ResultBanner({ result }: { result: { ok: true; message: string }
       role={result.ok ? 'status' : 'alert'}
       className={cn(
         'flex items-start gap-3 rounded-lg border-2 p-4 text-lg',
-        result.ok ? 'border-primary bg-secondary text-secondary-foreground' : 'border-destructive bg-destructive/10 text-destructive',
+        result.ok ? 'border-primary bg-secondary text-secondary-foreground' : 'border-destructive bg-card text-destructive',
       )}
     >
       {result.ok ? (

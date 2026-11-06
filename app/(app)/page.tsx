@@ -50,7 +50,7 @@ export default async function HomePage() {
             <Icon className="size-9 shrink-0" aria-hidden="true" />
             <span className="flex flex-col">
               <span className="text-xl font-bold">{label}</span>
-              <span className={i < 2 ? 'text-base text-primary-foreground/85' : 'text-base text-muted-foreground'}>{hint}</span>
+              <span className={i < 2 ? 'text-base text-primary-foreground' : 'text-base text-muted-foreground'}>{hint}</span>
             </span>
           </Link>
         ))}
@@ -79,7 +79,7 @@ export default async function HomePage() {
               ))}
             </ul>
           )}
-          <Link href="/inventario" className="w-fit text-base font-bold text-primary underline underline-offset-4">
+          <Link href="/inventario" className="inline-flex min-h-12 w-fit items-center py-2 text-base font-bold text-primary underline underline-offset-4">
             Ver todo el inventario
           </Link>
         </Panel>
@@ -106,7 +106,7 @@ export default async function HomePage() {
                     <strong>{d.familyCode}</strong>
                     {` · ${formatDateTime(d.deliveredAt)} · ${d.by ?? ''}`}
                   </span>
-                  <span className="flex gap-2 text-sm font-bold">
+                  <span className="flex flex-wrap gap-2 text-base font-bold">
                     {d.isException ? <span className="rounded-md bg-warning px-2 py-1 text-warning-foreground">Excepción</span> : null}
                     {d.status === 'anulada' ? <span className="rounded-md bg-destructive px-2 py-1 text-white">Anulada</span> : null}
                   </span>
